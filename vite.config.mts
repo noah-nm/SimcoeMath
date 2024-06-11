@@ -10,6 +10,7 @@ import Vuetify, { transformAssetUrls } from 'vite-plugin-vuetify'
 // Utilities
 import { defineConfig } from 'vite'
 import { fileURLToPath, URL } from 'node:url'
+import path from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -57,6 +58,7 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
+      '@pages': path.resolve(__dirname, "src/pages")
     },
     extensions: [
       '.js',

@@ -5,12 +5,21 @@
  */
 
 // Composables
-import { createRouter, createWebHistory } from 'vue-router/auto'
-import { setupLayouts } from 'virtual:generated-layouts'
+import Home from '@pages/index.vue'
+import { RouteRecordRaw, createRouter, createWebHistory  } from 'vue-router'
+
+const routes: RouteRecordRaw[] = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home
+  }
+
+];
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
-  extendRoutes: setupLayouts,
-})
+  history: createWebHistory(),
+  routes,
+});
 
 export default router
