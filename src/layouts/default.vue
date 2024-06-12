@@ -19,7 +19,7 @@
         <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon>
 
-      <v-toolbar-title>Simcoe Signout</v-toolbar-title>
+      <v-toolbar-title>Simcoe Math</v-toolbar-title>
     </v-app-bar>
 
     <v-main>
