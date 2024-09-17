@@ -45,6 +45,20 @@
                 
             </v-card>
         </v-col>
+        <v-col cols="12" md="3">
+            <v-card
+            class="pa-4 align-center"
+            height="200"
+            title="Binary Multiplication"
+            text="practice multiplying binary numbers"
+            >
+
+            <v-card-action>
+                <v-btn class="mt-5" :to="'/binary-multiplication'">Start Practicing!</v-btn>
+            </v-card-action>
+                
+            </v-card>
+        </v-col>
     </v-row>
     
 </template>

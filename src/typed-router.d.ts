@@ -20,6 +20,7 @@ declare module 'vue-router/auto-routes' {
   export interface RouteNamedMap {
     '/': RouteRecordInfo<'/', '/', Record<never, never>, Record<never, never>>,
     '/DataStorage/BinaryAddition': RouteRecordInfo<'/DataStorage/BinaryAddition', '/DataStorage/BinaryAddition', Record<never, never>, Record<never, never>>,
+    '/DataStorage/BinaryMultiplication': RouteRecordInfo<'/DataStorage/BinaryMultiplication', '/DataStorage/BinaryMultiplication', Record<never, never>, Record<never, never>>,
     '/DataStorage/BinaryToDecimal': RouteRecordInfo<'/DataStorage/BinaryToDecimal', '/DataStorage/BinaryToDecimal', Record<never, never>, Record<never, never>>,
     '/DataStorage/DataStorage': RouteRecordInfo<'/DataStorage/DataStorage', '/DataStorage/DataStorage', Record<never, never>, Record<never, never>>,
     '/DataStorage/DecimalToBinary': RouteRecordInfo<'/DataStorage/DecimalToBinary', '/DataStorage/DecimalToBinary', Record<never, never>, Record<never, never>>,
