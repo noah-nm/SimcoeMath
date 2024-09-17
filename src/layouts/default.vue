@@ -15,6 +15,9 @@
     </v-navigation-drawer>
 
     <v-app-bar>
+      <v-app-bar-nav-icon @click="goBack">
+        <v-icon>mdi-arrow-left-bold</v-icon>
+      </v-app-bar-nav-icon>
       <v-app-bar-nav-icon @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon>
@@ -55,9 +58,21 @@ export default {
             { route: this.routes[0], icon: 'mdi-home' },
           ],
         },
+        {
+          header: 'Subjects',
+          routes: [
+            { route: this.routes[1], icon: 'mdi-database'}
+          ],
+        }
       ];
 
       return categories;
+    }
+  },
+
+  methods: {
+    goBack() {
+      this.$router.go(-1);
     }
   }
 }

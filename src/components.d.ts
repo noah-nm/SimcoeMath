@@ -8,6 +8,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    BinaryAdditionPractice: typeof import('./components/DataStorage/BinaryAdditionPractice.vue')['default']
+    BinaryMultiplicationPractice: typeof import('./components/DataStorage/BinaryMultiplicationPractice.vue')['default']
+    BinaryToDecimalPractice: typeof import('./components/DataStorage/BinaryToDecimalPractice.vue')['default']
+    DataStorageMenu: typeof import('./components/DataStorage/DataStorageMenu.vue')['default']
+    DecimalToBinaryPractice: typeof import('./components/DataStorage/DecimalToBinaryPractice.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Home: typeof import('./components/Home/home.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']

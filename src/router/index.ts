@@ -7,12 +7,37 @@
 // Composables
 import Home from '@pages/index.vue'
 import { RouteRecordRaw, createRouter, createWebHistory  } from 'vue-router'
+import DataStorageMenu from '../components/DataStorage/DataStorageMenu.vue';
+import DataStorage from '../pages/DataStorage/DataStorage.vue';
+import BinaryToDecimal from '../pages/DataStorage/BinaryToDecimal.vue';
+import DecimalToBinary from '../pages/DataStorage/DecimalToBinary.vue';
+import BinaryAddition from '../pages/DataStorage/BinaryAddition.vue';
 
 const routes: RouteRecordRaw[] = [
   {
     path: '/',
-    name: 'Home',
+    name: 'home',
     component: Home
+  },
+  {
+    path: '/data-storage',
+    name: 'Data Storage',
+    component: DataStorage
+  },
+  {
+    path: '/binary-to-decimal',
+    name: 'Binary To Decimal',
+    component: BinaryToDecimal
+  },
+  {
+    path: '/decimal-to-binary',
+    name: 'Decimal To Binary',
+    component: DecimalToBinary
+  },
+  {
+    path: '/binary-addition',
+    name: 'Binary Addition',
+    component: BinaryAddition
   }
 
 ];
