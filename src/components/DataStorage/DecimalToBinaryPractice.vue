@@ -7,7 +7,7 @@
           <v-row class="mt-8">
             <v-col>
               <h3 class="text-center">
-                Binary Number: <strong class="text-blue">{{ decimalNumber }}</strong>
+                Decimal Number: <strong class="text-blue">{{ decimalNumber }}</strong>
               </h3>
             </v-col>
           </v-row>
