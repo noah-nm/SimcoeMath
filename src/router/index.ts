@@ -12,6 +12,7 @@ import DataStorage from '../pages/DataStorage/DataStorage.vue';
 import BinaryToDecimal from '../pages/DataStorage/BinaryToDecimal.vue';
 import DecimalToBinary from '../pages/DataStorage/DecimalToBinary.vue';
 import BinaryAddition from '../pages/DataStorage/BinaryAddition.vue';
+import BinaryMultiplication from '../pages/DataStorage/BinaryMultiplication.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -38,6 +39,11 @@ const routes: RouteRecordRaw[] = [
     path: '/binary-addition',
     name: 'Binary Addition',
     component: BinaryAddition
+  },
+  {
+    path: '/binary-multiplication',
+    name: 'Binary Multiplication',
+    component: BinaryMultiplication
   }
 
 ];
