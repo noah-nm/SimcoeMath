@@ -13,6 +13,7 @@ declare module 'vue' {
     BinaryToDecimalPractice: typeof import('./components/DataStorage/BinaryToDecimalPractice.vue')['default']
     DataStorageMenu: typeof import('./components/DataStorage/DataStorageMenu.vue')['default']
     DecimalToBinaryPractice: typeof import('./components/DataStorage/DecimalToBinaryPractice.vue')['default']
+    DecimalToOctalPractice: typeof import('./components/DataStorage/DecimalToOctalPractice.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Home: typeof import('./components/Home/home.vue')['default']
     OctalToDecimalPractice: typeof import('./components/DataStorage/OctalToDecimalPractice.vue')['default']

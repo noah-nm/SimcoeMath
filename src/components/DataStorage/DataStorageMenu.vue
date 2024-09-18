@@ -86,5 +86,20 @@
                 
             </v-card>
         </v-col>
+
+        <v-col cols="12" md="3">
+            <v-card
+            class="pa-4 align-center"
+            height="200"
+            title="Decimal to Octal"
+            text="practice converting decimal numbers to an octal format"
+            >
+
+                <v-card-action>
+                    <v-btn :to="'/decimal-to-octal'">Start Practicing!</v-btn>
+                </v-card-action>
+                
+            </v-card>
+        </v-col>
     </v-row>
 </template>
