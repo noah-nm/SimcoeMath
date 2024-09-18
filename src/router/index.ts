@@ -13,6 +13,7 @@ import BinaryToDecimal from '../pages/DataStorage/BinaryToDecimal.vue';
 import DecimalToBinary from '../pages/DataStorage/DecimalToBinary.vue';
 import BinaryAddition from '../pages/DataStorage/BinaryAddition.vue';
 import BinaryMultiplication from '../pages/DataStorage/BinaryMultiplication.vue';
+import OctalToDecimal from '../pages/DataStorage/OctalToDecimal.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -44,6 +45,11 @@ const routes: RouteRecordRaw[] = [
     path: '/binary-multiplication',
     name: 'Binary Multiplication',
     component: BinaryMultiplication
+  },
+  {
+    path: '/octal-to-decimal',
+    name: 'Octal To Decimal',
+    component: OctalToDecimal
   }
 
 ];
