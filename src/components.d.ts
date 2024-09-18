@@ -15,6 +15,7 @@ declare module 'vue' {
     DecimalToBinaryPractice: typeof import('./components/DataStorage/DecimalToBinaryPractice.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     Home: typeof import('./components/Home/home.vue')['default']
+    OctalToDecimalPractice: typeof import('./components/DataStorage/OctalToDecimalPractice.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     SidebarHeader: typeof import('./components/sidebar/sidebarHeader.vue')['default']
