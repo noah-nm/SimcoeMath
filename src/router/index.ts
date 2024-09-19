@@ -15,6 +15,7 @@ import BinaryAddition from '../pages/DataStorage/BinaryAddition.vue';
 import BinaryMultiplication from '../pages/DataStorage/BinaryMultiplication.vue';
 import OctalToDecimal from '../pages/DataStorage/OctalToDecimal.vue';
 import DecimalToOctal from '../pages/DataStorage/DecimalToOctal.vue';
+import HexadecimalToDecimal from '../pages/DataStorage/HexadecimalToDecimal.vue';
 
 const routes: RouteRecordRaw[] = [
   {
@@ -56,6 +57,11 @@ const routes: RouteRecordRaw[] = [
     path: '/decimal-to-octal',
     name: 'Decimal To Octal',
     component: DecimalToOctal
+  },
+  {
+    path: '/hexadecimal-to-decimal',
+    name: 'Hexadecimal to Decimal',
+    component: HexadecimalToDecimal
   }
 
 ];
