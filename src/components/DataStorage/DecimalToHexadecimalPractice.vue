@@ -2,7 +2,7 @@
     <v-container>
       <v-row justify="center">
         <v-col cols="12" md="5">
-          <h1 class="text-center">Convert the Decimal Number to Octal</h1>
+          <h1 class="text-center">Convert the Decimal Number to Hexadecimal</h1>
   
           <v-row class="mt-8">
             <v-col>
@@ -17,7 +17,7 @@
               <v-text-field
                 v-if="!reveal"
                 v-model="userInput"
-                label="Enter Octal Value"
+                label="Enter Hexadecimal Value"
                 type="input"
                 :rules="[rules.required]"
               ></v-text-field>
@@ -25,7 +25,7 @@
                 v-else-if="reveal"
                 v-model="userInput"
                 disabled
-                label="Enter Octal Value"
+                label="Enter Hexadecimal Value"
                 type="input"
                 :rules="[rules.required]"
               ></v-text-field>
@@ -55,7 +55,7 @@
   
           <v-row>
             <v-col>
-              <h2 class="text-center">The Correct Answer is: <strong v-if="reveal">{{ decimalOctal }}</strong></h2>
+              <h2 class="text-center">The Correct Answer is: <strong v-if="reveal">{{ decimalHexadecimal }}</strong></h2>
             </v-col>
           </v-row>
         </v-col>
@@ -67,23 +67,23 @@
   import { defineComponent, ref, onMounted } from 'vue';
   
   export default defineComponent({
-    name: 'OctalGame',
+    name: 'HexadecimalGame',
     setup() {
       const decimalNumber = ref<number>(0);
       const userInput = ref<string>('');
       const result = ref<{ correct: boolean; message: string } | null>(null);
       const reveal = ref<boolean>(false);
-      const decimalOctal = ref<string>('');
+      const decimalHexadecimal = ref<string>('');
   
       const rules = {
         required: (v: any) => !!v || 'Required.',
       };
   
       function generateDecimal() {
-        const randomDecimal = Math.floor(Math.random() * 1000);
+        const randomDecimal = Math.floor(Math.random() * 10000); // Larger number range for more challenge
         decimalNumber.value = randomDecimal;
         userInput.value = '';
-        decimalOctal.value = randomDecimal.toString(8);
+        decimalHexadecimal.value = randomDecimal.toString(16).toUpperCase(); // Convert to hexadecimal and make uppercase
         reveal.value = false;
         result.value = null;
       }
@@ -91,7 +91,7 @@
       function checkAnswer() {
         if (decimalNumber.value === 0 || userInput.value === '') return;
   
-        if (userInput.value === decimalOctal.value) {
+        if (userInput.value.toUpperCase() === decimalHexadecimal.value) {
           result.value = { correct: true, message: 'Correct!' };
         } else {
           result.value = { correct: false, message: `Incorrect` };
@@ -119,7 +119,7 @@
         result,
         rules,
         reveal,
-        decimalOctal,
+        decimalHexadecimal,
         generateDecimal,
         checkAnswer,
         handleAlertDismiss,
