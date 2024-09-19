@@ -102,4 +102,41 @@
             </v-card>
         </v-col>
     </v-row>
+
+    <v-row class=" pr-8 pl-8 pb-5">
+        <v-divider
+        :thickness="2"
+        class="border-opacity-25 ml-3 mr-3 mb-5"
+        ></v-divider>
+
+        <v-col cols="12" md="3">
+            <v-card
+            class="pa-4 align-center"
+            height="200"
+            title="Hexadecimal to Decimal"
+            text="practice converting hexadecimal numbers to a decimal format"
+            >
+
+                <v-card-action>
+                    <v-btn :to="'/hexadecimal-to-decimal'">Start Practicing!</v-btn>
+                </v-card-action>
+                
+            </v-card>
+        </v-col>
+
+        <v-col cols="12" md="3">
+            <v-card
+            class="pa-4 align-center"
+            height="200"
+            title="Decimal to Hexadecimal"
+            text="practice converting decimal numbers to a hexadecimal format"
+            >
+
+                <v-card-action>
+                    <v-btn :to="'/decimal-to-octal'">Start Practicing!</v-btn>
+                </v-card-action>
+                
+            </v-card>
+        </v-col>
+    </v-row>
 </template>
