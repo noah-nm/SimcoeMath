@@ -5,6 +5,7 @@
         :thickness="2"
         class="border-opacity-25 mt-5 ml-8 mr-8"
     ></v-divider>
+    <h2 class="text-center mt-5 text-decoration-underline">Binary</h2>
     <v-row class="pt-8 pr-8 pl-8 pb-5">
         <v-col cols="12" md="3">
             <v-card
@@ -56,11 +57,12 @@
         </v-col>
     </v-row>
 
-    <v-row class=" pr-8 pl-8 pb-5">
-        <v-divider
+    <v-divider
         :thickness="2"
         class="border-opacity-25 ml-3 mr-3 mb-5"
-        ></v-divider>
+    ></v-divider>
+    <h2 class="text-center mt-5 mb-7 text-decoration-underline">Octal</h2>
+    <v-row class=" pr-8 pl-8 pb-5">
         <v-col cols="12" md="3">
             <v-card
             class="pa-4 align-center"
@@ -87,11 +89,12 @@
         </v-col>
     </v-row>
 
-    <v-row class=" pr-8 pl-8 pb-5">
-        <v-divider
+   <v-divider
         :thickness="2"
         class="border-opacity-25 ml-3 mr-3 mb-5"
-        ></v-divider>
+    ></v-divider>
+    <h2 class="text-center mt-5 mb-7 text-decoration-underline">Hexadecimal</h2>
+    <v-row class=" pr-8 pl-8 pb-5">
         <v-col cols="12" md="3">
             <v-card
             class="pa-4 align-center"
