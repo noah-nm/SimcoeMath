@@ -11,6 +11,7 @@ declare module 'vue' {
     BinaryAdditionPractice: typeof import('./components/DataStorage/BinaryAdditionPractice.vue')['default']
     BinaryMultiplicationPractice: typeof import('./components/DataStorage/BinaryMultiplicationPractice.vue')['default']
     BinaryToDecimalPractice: typeof import('./components/DataStorage/BinaryToDecimalPractice.vue')['default']
+    BinaryToOctalPractice: typeof import('./components/DataStorage/BinaryToOctalPractice.vue')['default']
     DataStorageMenu: typeof import('./components/DataStorage/DataStorageMenu.vue')['default']
     DecimalToBinaryPractice: typeof import('./components/DataStorage/DecimalToBinaryPractice.vue')['default']
     DecimalToHexadecimalPractice: typeof import('./components/DataStorage/DecimalToHexadecimalPractice.vue')['default']
