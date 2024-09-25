@@ -5,7 +5,11 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
-    "lint": "eslint . --fix --ignore-path .gitignore"
+    "lint": "eslint . --fix --ignore-path .gitignore",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "**/*": "prettier --write --ignore-unknown"
   },
   "dependencies": {
     "@mdi/font": "^7.4.47",
@@ -26,7 +30,10 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.22.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
     "pinia": "^2.1.7",
+    "prettier": "3.3.3",
     "sass": "^1.71.1",
     "typescript": "^5.4.2",
     "unplugin-auto-import": "^0.17.5",
