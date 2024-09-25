@@ -19,6 +19,7 @@ declare module 'vue' {
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
     HexadecimalToDecimalPractice: typeof import('./components/DataStorage/HexadecimalToDecimalPractice.vue')['default']
     Home: typeof import('./components/Home/home.vue')['default']
+    OctalToBinaryPractice: typeof import('./components/DataStorage/OctalToBinaryPractice.vue')['default']
     OctalToDecimalPractice: typeof import('./components/DataStorage/OctalToDecimalPractice.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

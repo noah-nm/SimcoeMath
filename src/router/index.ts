@@ -5,77 +5,82 @@
  */
 
 // Composables
-import Home from '@pages/index.vue'
-import { RouteRecordRaw, createRouter, createWebHistory  } from 'vue-router'
-import DataStorageMenu from '../components/DataStorage/DataStorageMenu.vue';
-import DataStorage from '../pages/DataStorage/DataStorage.vue';
-import BinaryToDecimal from '../pages/DataStorage/BinaryToDecimal.vue';
-import DecimalToBinary from '../pages/DataStorage/DecimalToBinary.vue';
-import BinaryAddition from '../pages/DataStorage/BinaryAddition.vue';
-import BinaryMultiplication from '../pages/DataStorage/BinaryMultiplication.vue';
-import OctalToDecimal from '../pages/DataStorage/OctalToDecimal.vue';
-import DecimalToOctal from '../pages/DataStorage/DecimalToOctal.vue';
-import HexadecimalToDecimal from '../pages/DataStorage/HexadecimalToDecimal.vue';
-import DecimalToHexadecimal from '../pages/DataStorage/DecimalToHexadecimal.vue';
-import BinaryToOctal from '../pages/DataStorage/BinaryToOctal.vue';
+import Home from "@pages/index.vue";
+import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
+import DataStorageMenu from "../components/DataStorage/DataStorageMenu.vue";
+import DataStorage from "../pages/DataStorage/DataStorage.vue";
+import BinaryToDecimal from "../pages/DataStorage/BinaryToDecimal.vue";
+import DecimalToBinary from "../pages/DataStorage/DecimalToBinary.vue";
+import BinaryAddition from "../pages/DataStorage/BinaryAddition.vue";
+import BinaryMultiplication from "../pages/DataStorage/BinaryMultiplication.vue";
+import OctalToDecimal from "../pages/DataStorage/OctalToDecimal.vue";
+import DecimalToOctal from "../pages/DataStorage/DecimalToOctal.vue";
+import HexadecimalToDecimal from "../pages/DataStorage/HexadecimalToDecimal.vue";
+import DecimalToHexadecimal from "../pages/DataStorage/DecimalToHexadecimal.vue";
+import BinaryToOctal from "../pages/DataStorage/BinaryToOctal.vue";
+import OctalToBinary from "../pages/DataStorage/OctalToBinary.vue";
 
 const routes: RouteRecordRaw[] = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/data-storage',
-    name: 'Data Storage',
-    component: DataStorage
+    path: "/data-storage",
+    name: "Data Storage",
+    component: DataStorage,
   },
   {
-    path: '/binary-to-decimal',
-    name: 'Binary To Decimal',
-    component: BinaryToDecimal
+    path: "/binary-to-decimal",
+    name: "Binary To Decimal",
+    component: BinaryToDecimal,
   },
   {
-    path: '/decimal-to-binary',
-    name: 'Decimal To Binary',
-    component: DecimalToBinary
+    path: "/decimal-to-binary",
+    name: "Decimal To Binary",
+    component: DecimalToBinary,
   },
   {
-    path: '/binary-addition',
-    name: 'Binary Addition',
-    component: BinaryAddition
+    path: "/binary-addition",
+    name: "Binary Addition",
+    component: BinaryAddition,
   },
   {
-    path: '/binary-multiplication',
-    name: 'Binary Multiplication',
-    component: BinaryMultiplication
+    path: "/binary-multiplication",
+    name: "Binary Multiplication",
+    component: BinaryMultiplication,
   },
   {
-    path: '/octal-to-decimal',
-    name: 'Octal To Decimal',
-    component: OctalToDecimal
+    path: "/octal-to-decimal",
+    name: "Octal To Decimal",
+    component: OctalToDecimal,
   },
   {
-    path: '/decimal-to-octal',
-    name: 'Decimal To Octal',
-    component: DecimalToOctal
+    path: "/decimal-to-octal",
+    name: "Decimal To Octal",
+    component: DecimalToOctal,
   },
   {
-    path: '/hexadecimal-to-decimal',
-    name: 'Hexadecimal To Decimal',
-    component: HexadecimalToDecimal
+    path: "/hexadecimal-to-decimal",
+    name: "Hexadecimal To Decimal",
+    component: HexadecimalToDecimal,
   },
   {
-    path: '/decimal-to-hexadecimal',
-    name: 'Decimal To Hexadecimal',
-    component: DecimalToHexadecimal
+    path: "/decimal-to-hexadecimal",
+    name: "Decimal To Hexadecimal",
+    component: DecimalToHexadecimal,
   },
   {
-    path: '/binary-to-octal',
-    name: 'Binary To Octal',
-    component: BinaryToOctal
-  }
-
+    path: "/binary-to-octal",
+    name: "Binary To Octal",
+    component: BinaryToOctal,
+  },
+  {
+    path: "/octal-to-binary",
+    name: "Octal To Binary",
+    component: OctalToBinary,
+  },
 ];
 
 const router = createRouter({
@@ -83,4 +88,4 @@ const router = createRouter({
   routes,
 });
 
-export default router
+export default router;
