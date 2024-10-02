@@ -158,11 +158,11 @@
       <v-card
         class="pa-4 align-center"
         height="200"
-        title="Binary Addition"
-        text="practice adding binary numbers"
+        title="Binary to Hexadecimal"
+        text="practice converting binary numbers to a hexadecimal format"
       >
         <v-card-action>
-          <v-btn class="mt-5" :to="'/binary-addition'">Start Practicing!</v-btn>
+          <v-btn :to="'/binary-to-hexadecimal'">Start Practicing!</v-btn>
         </v-card-action>
       </v-card>
     </v-col>
