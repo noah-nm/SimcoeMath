@@ -29,6 +29,7 @@ declare module 'vue-router/auto-routes' {
     '/DataStorage/DecimalToHexadecimal': RouteRecordInfo<'/DataStorage/DecimalToHexadecimal', '/DataStorage/DecimalToHexadecimal', Record<never, never>, Record<never, never>>,
     '/DataStorage/DecimalToOctal': RouteRecordInfo<'/DataStorage/DecimalToOctal', '/DataStorage/DecimalToOctal', Record<never, never>, Record<never, never>>,
     '/DataStorage/HexadecimalToDecimal': RouteRecordInfo<'/DataStorage/HexadecimalToDecimal', '/DataStorage/HexadecimalToDecimal', Record<never, never>, Record<never, never>>,
+    '/DataStorage/HexToBinary': RouteRecordInfo<'/DataStorage/HexToBinary', '/DataStorage/HexToBinary', Record<never, never>, Record<never, never>>,
     '/DataStorage/OctalToBinary': RouteRecordInfo<'/DataStorage/OctalToBinary', '/DataStorage/OctalToBinary', Record<never, never>, Record<never, never>>,
     '/DataStorage/OctalToDecimal': RouteRecordInfo<'/DataStorage/OctalToDecimal', '/DataStorage/OctalToDecimal', Record<never, never>, Record<never, never>>,
   }
