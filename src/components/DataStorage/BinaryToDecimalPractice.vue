@@ -1,13 +1,47 @@
 <template>
-    <v-container>
-      <v-row justify="center">
-        <v-col cols="12" md="5">
-          <h1 class="text-center">Convert the binary number to decimal</h1>
+  <v-container fluid class="all">
+    <v-row align="flex-start">
+      <v-col class="settings-panel" cols="12" md="3">
+        <v-expansion-panels>
+          <v-expansion-panel
+            title="Settings"
+            text="Modify game settings"
+            expand-icon="mdi-cog"
+            collapse-icon="mdi-cog"
+          >
+            <v-expansion-panel-text>
+              <v-row>
+                <v-col>
+                  <v-text-field
+                    placeholder="bit count"
+                    hide-details
+                    v-model="binarySize"
+                  ></v-text-field>
+                </v-col>
+                <v-col>
+                  <v-btn
+                    color="primary"
+                    class="mt-3 ml-10"
+                    @click="applySettings"
+                  >
+                    Apply</v-btn
+                  >
+                </v-col>
+              </v-row>
+            </v-expansion-panel-text>
+          </v-expansion-panel>
+        </v-expansion-panels>
+      </v-col>
+
+      <v-col class="game" cols="12" md="6">
+        <div class="centered-content">
+          <h1 class="text-center mr-6">Convert the binary number to decimal</h1>
 
           <v-row class="mt-8">
             <v-col>
               <h3 class="text-center">
-                Binary Number: <strong class="text-blue">{{ binaryNumber }}</strong>
+                Binary Number:
+                <strong class="text-blue">{{ binaryNumber }}</strong>
               </h3>
             </v-col>
           </v-row>
@@ -33,13 +67,21 @@
           </v-row>
 
           <v-row justify="center">
-            <v-col class="d-flex" cols="auto">
-              <v-btn class="mr-6 pr-6 pl-6"@click="generateBinary" color="primary">New Number</v-btn>
-              <v-btn class="mr-6" @click="checkAnswer" color="success">Check Answer</v-btn>
+            <v-col class="d-flex ml-7" cols="auto">
+              <v-btn
+                class="mr-6 pr-6 pl-6"
+                @click="generateBinary"
+                color="primary"
+              >
+                New Number
+              </v-btn>
+              <v-btn class="mr-6" @click="checkAnswer" color="success">
+                Check Answer
+              </v-btn>
               <v-btn color="primary" @click="revealAnswer">Reveal Answer</v-btn>
             </v-col>
           </v-row>
-  
+
           <v-row>
             <v-col>
               <v-alert
@@ -47,98 +89,133 @@
                 :type="result.correct ? 'success' : 'error'"
                 closable
                 @click:close="handleAlertDismiss"
-            >
+              >
                 {{ result.message }}
               </v-alert>
             </v-col>
           </v-row>
 
           <v-row>
-            <v-col>
-              <h2 class="text-center">The Correct Answer is: <strong v-if="reveal">{{ binaryDecimal }}</strong></h2>
+            <v-col class="ml-6">
+              <h2 class="text-center">
+                The Correct Answer is:
+                <strong v-if="reveal">{{ binaryDecimal }}</strong>
+              </h2>
             </v-col>
           </v-row>
-        </v-col>
-      </v-row>
-    </v-container>
+        </div>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
-  
-  
-  <script lang="ts">
-  import { defineComponent, ref, onMounted } from 'vue';
-  
-  export default defineComponent({
-    name: 'BinaryGame',
-    setup() {
-      const binaryNumber = ref<string>('');
-      const userInput = ref<number | null>(null);
-      const result = ref<{ correct: boolean; message: string } | null>(null);
-      const reveal = ref<boolean>(false);
-      const binaryDecimal = ref<number | null>(null);
-  
-      const rules = {
-        required: (v: any) => !!v || 'Required.',
-      };
-  
-      function generateBinary() {
-        const randomBinary = Array.from({ length: 8 }, () => Math.round(Math.random())).join('');
-        binaryNumber.value = randomBinary;
-        userInput.value = null;
-        reveal.value = false;
-        result.value = null;
-      }
-  
-      function checkAnswer() {
-        if (binaryNumber.value === '' || userInput.value === null) return;
-        
-        const binaryDecimal = parseInt(binaryNumber.value, 2);
-        if (userInput.value == binaryDecimal) {
-          result.value = { correct: true, message: 'Correct!' };
-        } else {
-          result.value = { correct: false, message: `Incorrect. Please try again.` };
-        }
 
-        console.log(binaryDecimal);
-        console.log(userInput.value);
-        console.log(result.value);
+<script lang="ts">
+import { defineComponent, ref, onMounted } from "vue";
 
-      }
+export default defineComponent({
+  name: "BinaryGame",
+  setup() {
+    const binaryNumber = ref<string>("");
+    const userInput = ref<number | null>(null);
+    const result = ref<{ correct: boolean; message: string } | null>(null);
+    const reveal = ref<boolean>(false);
+    const binaryDecimal = ref<number | null>(null);
+    const binarySize = ref<number>(8);
 
-      function revealAnswer() {
-        if (binaryNumber.value !== '') {
-          binaryDecimal.value = parseInt(binaryNumber.value, 2);
-          reveal.value = true;
-        }
-      }
+    const rules = {
+      required: (v: any) => !!v || "Required.",
+    };
 
-      function handleAlertDismiss() {
-        result.value = null;
+    function generateBinary() {
+      let randomBinary = "";
+
+      // Ensure the new binary number is different from the previous one
+      do {
+        randomBinary = Array.from({ length: binarySize.value }, () =>
+          Math.round(Math.random()),
+        ).join("");
+      } while (randomBinary === binaryNumber.value);
+
+      binaryNumber.value = randomBinary;
+      userInput.value = null;
+      reveal.value = false;
+      result.value = null;
+    }
+
+    function checkAnswer() {
+      if (binaryNumber.value === "" || userInput.value === null) return;
+
+      const binaryDecimalValue = parseInt(binaryNumber.value, 2);
+      if (userInput.value == binaryDecimalValue) {
+        result.value = { correct: true, message: "Correct!" };
+      } else {
+        result.value = {
+          correct: false,
+          message: "Incorrect. Please try again.",
+        };
       }
-      
-      onMounted(() => {
+    }
+
+    function revealAnswer() {
+      if (binaryNumber.value !== "") {
+        binaryDecimal.value = parseInt(binaryNumber.value, 2);
+        reveal.value = true;
+      }
+    }
+
+    function handleAlertDismiss() {
+      result.value = null;
+    }
+
+    function applySettings() {
+      if (binarySize.value > 0) {
         generateBinary();
-        reveal.value = false;
-      })
+      }
+    }
 
-      return {
-        binaryNumber,
-        userInput,
-        result,
-        rules,
-        reveal,
-        binaryDecimal,
-        generateBinary,
-        checkAnswer,
-        handleAlertDismiss,
-        revealAnswer
-      };
-    },
-  });
-  </script>
-  
-  <style scoped>
-  .v-alert {
-    margin-top: 1rem;
-  }
-  </style>
-  
+    onMounted(() => {
+      generateBinary();
+    });
+
+    return {
+      binaryNumber,
+      userInput,
+      result,
+      rules,
+      reveal,
+      binaryDecimal,
+      generateBinary,
+      checkAnswer,
+      handleAlertDismiss,
+      revealAnswer,
+      applySettings,
+      binarySize,
+    };
+  },
+});
+</script>
+
+<style scoped>
+.settings-panel {
+  position: relative;
+}
+
+.all {
+  padding: 20px; /* Add some padding around the container */
+}
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.centered-content {
+  width: 100%; /* Ensure it takes the full width */
+}
+
+.v-alert {
+  margin-top: 1rem;
+}
+</style>
