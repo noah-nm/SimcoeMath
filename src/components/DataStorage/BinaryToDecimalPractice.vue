@@ -196,25 +196,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.settings-panel {
-  position: relative;
-}
-
-.all {
-  padding: 20px; /* Add some padding around the container */
-}
-
-.game {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 10px;
-}
-
-.centered-content {
-  width: 100%; /* Ensure it takes the full width */
-}
-
 .v-alert {
   margin-top: 1rem;
 }
