@@ -3,18 +3,18 @@
 </template>
 
 <script>
-import DefaultLayout from '@/layouts/default'
+import DefaultLayout from "@/layouts/default";
 
-const fallbackLayout = 'Default'
+const fallbackLayout = "Default";
 
 export default {
-  name: 'App',
+  name: "App",
   components: { DefaultLayout },
   computed: {
     layout() {
-      const loadedLayout = (this.$route?.meta?.layout || fallbackLayout)
-      return `${loadedLayout}-layout`
-    }
-  }
-}
+      const loadedLayout = this.$route?.meta?.layout || fallbackLayout;
+      return `${loadedLayout}-layout`;
+    },
+  },
+};
 </script>

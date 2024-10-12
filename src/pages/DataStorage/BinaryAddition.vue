@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BinaryAdditionPractice from '../../components/DataStorage/BinaryAdditionPractice.vue';
+import BinaryAdditionPractice from "../../components/DataStorage/BinaryAdditionPractice.vue";
 </script>
 
 <template>
-    <BinaryAdditionPractice></BinaryAdditionPractice>
+  <BinaryAdditionPractice></BinaryAdditionPractice>
 </template>

@@ -1,20 +1,20 @@
 <template>
-    <v-icon class="sidebar-icon">
-        {{ icon }}
-    </v-icon>
+  <v-icon class="sidebar-icon">
+    {{ icon }}
+  </v-icon>
 </template>
-  
+
 <script>
 export default {
-    name: 'SidebarIcon',
-    props: {
-        icon: {
-            type: String,
-            required: true,
-        },
+  name: "SidebarIcon",
+  props: {
+    icon: {
+      type: String,
+      required: true,
     },
-}
-</script>  
+  },
+};
+</script>
 
 <style>
 .sidebar-icon {

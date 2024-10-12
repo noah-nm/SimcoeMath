@@ -5,18 +5,18 @@
  */
 
 // Plugins
-import { registerPlugins } from '@/plugins'
+import { registerPlugins } from "@/plugins";
 
 // Components
-import App from './App.vue'
+import App from "./App.vue";
 
-import 'vuetify/styles';
-import '@mdi/font/css/materialdesignicons.css';
+import "vuetify/styles";
+import "@mdi/font/css/materialdesignicons.css";
 
 // Composables
-import { createApp } from 'vue'
-const app = createApp(App)
+import { createApp } from "vue";
+const app = createApp(App);
 
-registerPlugins(app)
+registerPlugins(app);
 
-app.mount('#app')
+app.mount("#app");

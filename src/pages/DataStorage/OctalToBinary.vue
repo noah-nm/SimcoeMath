@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import OctalToBinaryPractice from '../../components/DataStorage/OctalToBinaryPractice.vue';
+import OctalToBinaryPractice from "../../components/DataStorage/OctalToBinaryPractice.vue";
 </script>
 
 <template>
-    <OctalToBinaryPractice></OctalToBinaryPractice>
+  <OctalToBinaryPractice></OctalToBinaryPractice>
 </template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import BinaryToDecimalPractice from '../../components/DataStorage/BinaryToDecimalPractice.vue';
+import BinaryToDecimalPractice from "../../components/DataStorage/BinaryToDecimalPractice.vue";
 </script>
 
 <template>
-    <BinaryToDecimalPractice></BinaryToDecimalPractice>
+  <BinaryToDecimalPractice></BinaryToDecimalPractice>
 </template>
