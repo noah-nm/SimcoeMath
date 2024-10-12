@@ -92,7 +92,7 @@ export default defineComponent({
 
     function generateBinary() {
       const randomBinary = Array.from({ length: 8 }, () =>
-        Math.round(Math.random())
+        Math.round(Math.random()),
       ).join("");
       binaryNumber.value = randomBinary;
       decimalOctal.value = parseInt(randomBinary, 2).toString(8);

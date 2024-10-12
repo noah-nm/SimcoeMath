@@ -1,7 +1,10 @@
 <template>
   <v-app>
     <v-navigation-drawer v-model="drawer">
-      <template v-for="routeCategory in routeCategories" :key="routeCategory.header">
+      <template
+        v-for="routeCategory in routeCategories"
+        :key="routeCategory.header"
+      >
         <sidebarHeader :name="routeCategory.header" />
         <v-item-group>
           <template v-for="route in routeCategory.routes" :key="route.name">
@@ -32,48 +35,43 @@
 </template>
 
 <script>
-import router from '../router/index.ts';
-import sidebarIcon from '@/components/sidebar/sidebarIcon.vue';
-import sidebarItem from '@/components/sidebar/sidebarItem.vue';
-import sidebarHeader from '@/components/sidebar/sidebarHeader.vue';
+import router from "../router/index.ts";
+import sidebarIcon from "@/components/sidebar/sidebarIcon.vue";
+import sidebarItem from "@/components/sidebar/sidebarItem.vue";
+import sidebarHeader from "@/components/sidebar/sidebarHeader.vue";
 
 export default {
-  name: 'DefaultLayout',
+  name: "DefaultLayout",
   components: { sidebarIcon, sidebarItem, sidebarHeader },
   data() {
     return {
       drawer: null,
-      routes: router.getRoutes()
-    }
+      routes: router.getRoutes(),
+    };
   },
   computed: {
-
     // Returns the routes with their respective categories
     // When adding more routes, be sure to add the route into the category here
     routeCategories() {
       const categories = [
         {
-          header: 'Simcoe Math',
-          routes: [
-            { route: this.routes[0], icon: 'mdi-home' },
-          ],
+          header: "Simcoe Math",
+          routes: [{ route: this.routes[0], icon: "mdi-home" }],
         },
         {
-          header: 'Subjects',
-          routes: [
-            { route: this.routes[1], icon: 'mdi-database'}
-          ],
-        }
+          header: "Subjects",
+          routes: [{ route: this.routes[1], icon: "mdi-database" }],
+        },
       ];
 
       return categories;
-    }
+    },
   },
 
   methods: {
     goBack() {
       this.$router.go(-1);
-    }
-  }
-}
+    },
+  },
+};
 </script>

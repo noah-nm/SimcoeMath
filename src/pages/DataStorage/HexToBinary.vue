@@ -3,5 +3,5 @@ import HexToBinaryPractice from "../../components/DataStorage/HexToBinaryPractic
 </script>
 
 <template>
-  <HexToBinaryPractice></HexToBinaryPractice>
+  <HexToBinaryPractice> </HexToBinaryPractice>
 </template>

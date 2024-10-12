@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DataStorageMenu from '../../components/DataStorage/DataStorageMenu.vue';
+import DataStorageMenu from "../../components/DataStorage/DataStorageMenu.vue";
 </script>
 
 <template>
-    <DataStorageMenu></DataStorageMenu>
+  <DataStorageMenu></DataStorageMenu>
 </template>

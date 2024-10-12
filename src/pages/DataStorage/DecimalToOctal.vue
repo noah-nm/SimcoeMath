@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import DecimalToOctalPractice from '../../components/DataStorage/DecimalToOctalPractice.vue';
+import DecimalToOctalPractice from "../../components/DataStorage/DecimalToOctalPractice.vue";
 </script>
 
 <template>
-    <DecimalToOctalPractice></DecimalToOctalPractice>
+  <DecimalToOctalPractice></DecimalToOctalPractice>
 </template>
