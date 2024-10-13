@@ -13,6 +13,7 @@
               <v-row>
                 <v-col>
                   <v-text-field
+                    width="160"
                     placeholder="bit count"
                     hide-details
                     v-model="binarySize"
