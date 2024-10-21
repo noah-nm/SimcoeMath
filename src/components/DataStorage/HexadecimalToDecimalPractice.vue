@@ -20,7 +20,6 @@
               v-model="userInput"
               label="Enter Decimal Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
             <v-text-field
               v-else-if="reveal"
@@ -28,7 +27,6 @@
               disabled
               label="Enter Decimal Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -83,10 +81,6 @@ export default defineComponent({
     const reveal = ref<boolean>(false);
     const hexadecimalDecimal = ref<number | null>(null);
 
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
-
     function generateHex() {
       const randomHex = Array.from({ length: 5 }, () =>
         Math.floor(Math.random() * 16).toString(16),
@@ -137,7 +131,6 @@ export default defineComponent({
       hexadecimalNumber,
       userInput,
       result,
-      rules,
       reveal,
       hexadecimalDecimal,
       generateHex,

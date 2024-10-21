@@ -54,7 +54,6 @@
                 v-model="userInput"
                 label="Enter Decimal Value"
                 type="input"
-                :rules="[rules.required]"
               ></v-text-field>
               <v-text-field
                 v-else-if="reveal"
@@ -62,7 +61,6 @@
                 disabled
                 label="Enter Decimal Value"
                 type="input"
-                :rules="[rules.required]"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -123,14 +121,9 @@ export default defineComponent({
     const binaryDecimal = ref<number | null>(null);
     const binarySize = ref<number>(8);
 
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
-
     function generateBinary() {
       let randomBinary = "";
 
-      // Ensure the new binary number is different from the previous one
       do {
         randomBinary = Array.from({ length: binarySize.value }, () =>
           Math.round(Math.random()),
@@ -182,7 +175,6 @@ export default defineComponent({
       binaryNumber,
       userInput,
       result,
-      rules,
       reveal,
       binaryDecimal,
       generateBinary,

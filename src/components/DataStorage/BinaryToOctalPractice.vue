@@ -20,7 +20,6 @@
               v-model="userInput"
               label="Enter Octal Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
             <v-text-field
               v-else-if="reveal"
@@ -28,7 +27,6 @@
               disabled
               label="Enter Octal Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -86,10 +84,6 @@ export default defineComponent({
     const reveal = ref<boolean>(false);
     const decimalOctal = ref<string | null>(null);
 
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
-
     function generateBinary() {
       const randomBinary = Array.from({ length: 8 }, () =>
         Math.round(Math.random()),
@@ -133,7 +127,6 @@ export default defineComponent({
       binaryNumber,
       userInput,
       result,
-      rules,
       reveal,
       decimalOctal,
       generateBinary,

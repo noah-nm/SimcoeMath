@@ -5,9 +5,8 @@
  */
 
 // Composables
-import Home from "@pages/index.vue";
+import Home from "@pages/IndexHome.vue";
 import { RouteRecordRaw, createRouter, createWebHistory } from "vue-router";
-import DataStorageMenu from "../components/DataStorage/DataStorageMenu.vue";
 import DataStorage from "../pages/DataStorage/DataStorage.vue";
 import BinaryToDecimal from "../pages/DataStorage/BinaryToDecimal.vue";
 import DecimalToBinary from "../pages/DataStorage/DecimalToBinary.vue";

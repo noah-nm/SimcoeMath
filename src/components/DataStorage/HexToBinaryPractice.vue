@@ -20,7 +20,6 @@
               v-model="userInput"
               label="Enter Binary Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
             <v-text-field
               v-else-if="reveal"
@@ -28,7 +27,6 @@
               disabled
               label="Enter Binary Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -83,10 +81,6 @@ export default defineComponent({
     const reveal = ref<boolean>(false);
     const binaryValue = ref<string | null>(null);
 
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
-
     function generateHex() {
       const randomHex = Math.floor(Math.random() * 0xffff)
         .toString(16)
@@ -131,7 +125,6 @@ export default defineComponent({
       hexNumber,
       userInput,
       result,
-      rules,
       reveal,
       binaryValue,
       generateHex,
