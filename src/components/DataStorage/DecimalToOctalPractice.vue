@@ -20,7 +20,6 @@
               v-model="userInput"
               label="Enter Octal Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
             <v-text-field
               v-else-if="reveal"
@@ -28,7 +27,6 @@
               disabled
               label="Enter Octal Value"
               type="input"
-              :rules="[rules.required]"
             ></v-text-field>
           </v-col>
         </v-row>
@@ -86,10 +84,6 @@ export default defineComponent({
     const reveal = ref<boolean>(false);
     const decimalOctal = ref<string>("");
 
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
-
     function generateDecimal() {
       const randomDecimal = Math.floor(Math.random() * 1000);
       decimalNumber.value = randomDecimal;
@@ -128,7 +122,6 @@ export default defineComponent({
       decimalNumber,
       userInput,
       result,
-      rules,
       reveal,
       decimalOctal,
       generateDecimal,

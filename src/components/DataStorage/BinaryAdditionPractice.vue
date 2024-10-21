@@ -68,7 +68,6 @@
                 v-model="userInput"
                 label="Enter Binary Value"
                 type="input"
-                :rules="[rules.required]"
               ></v-text-field>
               <v-text-field
                 v-else-if="reveal"
@@ -76,7 +75,6 @@
                 disabled
                 label="Enter Binary Value"
                 type="input"
-                :rules="[rules.required]"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -140,10 +138,6 @@ export default defineComponent({
     const additionResult = ref<number | null>(null);
     const binarySize1 = ref<number>(4);
     const binarySize2 = ref<number>(4);
-
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
 
     function performAddition() {
       const randomBinary1 = Array.from({ length: binarySize1.value }, () =>
@@ -211,7 +205,6 @@ export default defineComponent({
       binaryNumber2,
       userInput,
       result,
-      rules,
       reveal,
       additionResult,
       performAddition,

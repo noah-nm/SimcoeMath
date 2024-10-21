@@ -54,7 +54,6 @@
                 v-model="userInput"
                 label="Enter Decimal Value"
                 type="input"
-                :rules="[rules.required]"
               ></v-text-field>
               <v-text-field
                 v-else-if="reveal"
@@ -62,7 +61,6 @@
                 disabled
                 label="Enter Decimal Value"
                 type="input"
-                :rules="[rules.required]"
               ></v-text-field>
             </v-col>
           </v-row>
@@ -123,10 +121,6 @@ export default defineComponent({
     const octalDecimal = ref<number | null>(null);
     const octalSize = ref<number>(5);
 
-    const rules = {
-      required: (v: any) => !!v || "Required.",
-    };
-
     function generateOctal() {
       const randomOctal = Array.from({ length: octalSize.value }, () =>
         Math.floor(Math.random() * 8),
@@ -181,7 +175,6 @@ export default defineComponent({
       octalNumber,
       userInput,
       result,
-      rules,
       reveal,
       octalDecimal,
       generateOctal,
