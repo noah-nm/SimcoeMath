@@ -36,7 +36,7 @@
 
       <v-col class="game" cols="12" md="6">
         <div class="centered-content">
-          <h1 class="text-center mr-6">Convert the decimal number to binary</h1>
+          <h1 class="text-center mr-6">Convert the decimal number to octal</h1>
 
           <v-row class="mt-8">
             <v-col>
@@ -52,14 +52,14 @@
               <v-text-field
                 v-if="!reveal"
                 v-model="userInput"
-                label="Enter Binary Value"
+                label="Enter Octal Value"
                 type="input"
               ></v-text-field>
               <v-text-field
                 v-else-if="reveal"
                 v-model="userInput"
                 disabled
-                label="Enter Binary Value"
+                label="Enter Octal Value"
                 type="input"
               ></v-text-field>
             </v-col>
