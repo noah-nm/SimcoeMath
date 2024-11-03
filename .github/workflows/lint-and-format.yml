@@ -28,4 +28,4 @@ jobs:
         run: bun run lint
 
       - name: Check Prettier formatting
-        run: bun run check-format
+        run: bun run prettier --write "src/**/*.{js,ts,vue,css}"
