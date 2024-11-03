@@ -22,3 +22,7 @@ pnpm-debug.log*
 *.sw?
 
 tmp/
+
+.vercel/
+
+core
