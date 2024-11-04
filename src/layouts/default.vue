@@ -61,7 +61,10 @@ export default {
         {
           header: "Categories",
           routes: [
-            { route: this.routes[1], icon: "mdi-database" },
+            {
+              route: this.routes[1],
+              icon: "mdi-database",
+            },
             {
               route: this.routes[2],
               icon: "mdi-numeric-10",
