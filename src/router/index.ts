@@ -20,6 +20,7 @@ import BinaryToOctal from "../pages/DataStorage/BinaryToOctal.vue";
 import OctalToBinary from "../pages/DataStorage/OctalToBinary.vue";
 import BinaryToHex from "../pages/DataStorage/BinaryToHex.vue";
 import HexToBinary from "../pages/DataStorage/HexToBinary.vue";
+import Grade10Menu from "../components/Grade10/Grade10Menu.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -31,6 +32,11 @@ const routes: RouteRecordRaw[] = [
     path: "/data-storage",
     name: "Data Storage",
     component: DataStorage,
+  },
+  {
+    path: "/grade-10",
+    name: "Grade 10",
+    component: Grade10Menu,
   },
   {
     path: "/binary-to-decimal",

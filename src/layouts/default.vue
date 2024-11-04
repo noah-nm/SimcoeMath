@@ -59,8 +59,14 @@ export default {
           routes: [{ route: this.routes[0], icon: "mdi-home" }],
         },
         {
-          header: "Subjects",
-          routes: [{ route: this.routes[1], icon: "mdi-database" }],
+          header: "Categories",
+          routes: [
+            { route: this.routes[1], icon: "mdi-database" },
+            {
+              route: this.routes[2],
+              icon: "mdi-numeric-10",
+            },
+          ],
         },
       ];
 
