@@ -20,7 +20,8 @@ import BinaryToOctal from "../pages/DataStorage/BinaryToOctal.vue";
 import OctalToBinary from "../pages/DataStorage/OctalToBinary.vue";
 import BinaryToHex from "../pages/DataStorage/BinaryToHex.vue";
 import HexToBinary from "../pages/DataStorage/HexToBinary.vue";
-import Grade10Menu from "../components/Grade10/Grade10Menu.vue";
+import Grade10Menu from "../pages/Grade10/Grade10Menu.vue";
+import FindHypotenuse from "../pages/Grade10/Trigonometry/FindHypotenuse.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -97,6 +98,11 @@ const routes: RouteRecordRaw[] = [
     path: "/hexadecimal-to-binary",
     name: "Hexadecimal To Binary",
     component: HexToBinary,
+  },
+  {
+    path: "/find-hypotenuse",
+    name: "Find Hypotenuse",
+    component: FindHypotenuse,
   },
 ];
 
