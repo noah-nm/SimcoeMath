@@ -67,7 +67,7 @@ export default {
             },
             {
               route: this.routes[2],
-              icon: "mdi-numeric-10",
+              icon: "mdi-triangle",
             },
           ],
         },

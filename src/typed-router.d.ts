@@ -31,7 +31,8 @@ declare module 'vue-router/auto-routes' {
     '/DataStorage/HexToBinary': RouteRecordInfo<'/DataStorage/HexToBinary', '/DataStorage/HexToBinary', Record<never, never>, Record<never, never>>,
     '/DataStorage/OctalToBinary': RouteRecordInfo<'/DataStorage/OctalToBinary', '/DataStorage/OctalToBinary', Record<never, never>, Record<never, never>>,
     '/DataStorage/OctalToDecimal': RouteRecordInfo<'/DataStorage/OctalToDecimal', '/DataStorage/OctalToDecimal', Record<never, never>, Record<never, never>>,
-    '/Grade10/Grade10Menu': RouteRecordInfo<'/Grade10/Grade10Menu', '/Grade10/Grade10Menu', Record<never, never>, Record<never, never>>,
     '/IndexHome': RouteRecordInfo<'/IndexHome', '/IndexHome', Record<never, never>, Record<never, never>>,
+    '/Trigonometry/RightAngle/FindHypotenuse': RouteRecordInfo<'/Trigonometry/RightAngle/FindHypotenuse', '/Trigonometry/RightAngle/FindHypotenuse', Record<never, never>, Record<never, never>>,
+    '/Trigonometry/TrigonometryMenu': RouteRecordInfo<'/Trigonometry/TrigonometryMenu', '/Trigonometry/TrigonometryMenu', Record<never, never>, Record<never, never>>,
   }
 }

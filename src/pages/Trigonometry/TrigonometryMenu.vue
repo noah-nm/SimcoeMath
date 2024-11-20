@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import Grade10Menu from "../../components/Grade10/Grade10Menu.vue";
+import Grade10Menu from "../../components/Trigonometry/TrigonometryMenu.vue";
 </script>
 
 <template>
