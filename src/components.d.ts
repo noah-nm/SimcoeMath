@@ -17,8 +17,8 @@ declare module 'vue' {
     DecimalToBinaryPractice: typeof import('./components/DataStorage/DecimalToBinaryPractice.vue')['default']
     DecimalToHexadecimalPractice: typeof import('./components/DataStorage/DecimalToHexadecimalPractice.vue')['default']
     DecimalToOctalPractice: typeof import('./components/DataStorage/DecimalToOctalPractice.vue')['default']
-    FindHypotenuse: typeof import('./components/Grade10/trigonometry/FindHypotenuse.vue')['default']
-    Grade10Menu: typeof import('./components/Grade10/Grade10Menu.vue')['default']
+    FindHypotenuse: typeof import('./components/Trigonometry/RightAngle/FindHypotenuse.vue')['default']
+    Grade10Menu: (typeof import("./components/Trigonometry/Grade10Menu.vue"))["default"]
     HelloWorld: (typeof import("./components/HelloWorld.vue"))["default"]
     HexadecimalToDecimalPractice: typeof import('./components/DataStorage/HexadecimalToDecimalPractice.vue')['default']
     HexToBinaryPractice: typeof import('./components/DataStorage/HexToBinaryPractice.vue')['default']
@@ -31,5 +31,6 @@ declare module 'vue' {
     SidebarHeader: typeof import('./components/sidebar/sidebarHeader.vue')['default']
     SidebarIcon: typeof import('./components/sidebar/sidebarIcon.vue')['default']
     SidebarItem: typeof import('./components/sidebar/sidebarItem.vue')['default']
+    TrigonometryMenu: typeof import('./components/Trigonometry/TrigonometryMenu.vue')['default']
   }
 }

@@ -14,7 +14,7 @@
                 <v-col>
                   <v-text-field
                     width="160"
-                    placeholder="bit count"
+                    placeholder="min side length"
                     hide-details
                     v-model="this.minSideLength"
                   ></v-text-field>
@@ -24,7 +24,7 @@
                 <v-col>
                   <v-text-field
                     width="160"
-                    placeholder="bit count"
+                    placeholder="max side length"
                     hide-details
                     v-model="this.maxSideLength"
                   ></v-text-field>
@@ -46,10 +46,13 @@
 
       <v-col class="game" cols="12" md="6">
         <div class="centered-content">
-          <h1 class="text-center mr-6">Find the Hypotenuse of the Triangle</h1>
+          <h1 class="text-center">Find the Hypotenuse of the Triangle</h1>
+          <h3 class="test-center font-italic">
+            Round to the nearest hundredth
+          </h3>
 
           <v-row justify="center">
-            <v-col class="text-center">
+            <v-col class="text-center ml-16">
               <!-- Triangle Visual -->
               <svg
                 :width="svgWidth"
@@ -126,7 +129,7 @@
           </v-row>
 
           <v-row justify="center">
-            <v-col class="d-flex ml-7" cols="auto">
+            <v-col class="d-flex" cols="auto">
               <v-btn
                 class="mr-6 pr-6 pl-6"
                 color="primary"
@@ -145,11 +148,12 @@
           <v-row>
             <v-col>
               <v-alert
-                v-if="feedbackMessage.message"
-                :type="feedbackMessage.correct ? 'success' : 'error'"
-                dismissible
+                v-if="this.result != null"
+                :type="this.result.correct ? 'success' : 'error'"
+                closable
+                @click:close="this.handleAlertDismiss()"
               >
-                {{ feedbackMessage.message }}
+                {{ this.result.message }}
               </v-alert>
             </v-col>
           </v-row>
@@ -185,7 +189,7 @@ export default defineComponent({
       minSideLength: 1,
       maxSideLength: 100,
       userInput: "",
-      feedbackMessage: { correct: false, message: "" },
+      result: null as { correct: boolean; message: string } | null,
       revealedAnswer: false,
       MIN_SIDE_LENGTH_PROPORTIONAL: 1, // Minimum side length used for svg proportions
       MAX_SIDE_LENGTH_PROPORTIONAL: 10, // Maximum side length used for svg proportions
@@ -205,6 +209,7 @@ export default defineComponent({
   },
   methods: {
     generateTriangle() {
+      // generate sides used in svg proportions
       this.sideAProportional =
         Math.random() *
           (this.MAX_SIDE_LENGTH_PROPORTIONAL -
@@ -219,6 +224,7 @@ export default defineComponent({
         this.sideAProportional ** 2 + this.sideBProportional ** 2,
       );
 
+      // generate sides displayed to user
       const scale =
         (this.maxSideLength - this.minSideLength) /
         (this.MAX_SIDE_LENGTH_PROPORTIONAL - this.MIN_SIDE_LENGTH_PROPORTIONAL);
@@ -226,14 +232,27 @@ export default defineComponent({
       this.sideB = this.sideBProportional * scale + this.minSideLength;
       this.sideC = this.sideCProportional * scale + this.minSideLength;
 
-      if (this.sideC > this.maxSideLength) {
+      // scales sides down if generated too large
+      if (
+        this.sideA > this.maxSideLength ||
+        this.sideB > this.maxSideLength ||
+        this.sideC > this.maxSideLength
+      ) {
         const finalScalingFactor = this.maxSideLength / this.sideC;
         this.sideA *= finalScalingFactor;
         this.sideB *= finalScalingFactor;
-        this.sideC = this.maxSideLength;
+        this.sideC *= finalScalingFactor;
       }
 
-      this.feedbackMessage = { correct: false, message: "" };
+      // final side c calculation for accuracy
+      // this ensures that the answer is calculated the same
+      // way a user would calculate this answer
+      this.sideC = Math.sqrt(
+        parseFloat(this.sideA.toFixed(2)) ** 2 +
+          parseFloat(this.sideB.toFixed(2)) ** 2,
+      );
+
+      this.result = { correct: false, message: "" };
       this.userInput = "";
       this.revealedAnswer = false;
     },
@@ -241,7 +260,7 @@ export default defineComponent({
     checkAnswer() {
       const isCorrect =
         parseFloat(this.userInput) === parseFloat(this.sideC.toFixed(2));
-      this.feedbackMessage = {
+      this.result = {
         correct: isCorrect,
         message: isCorrect ? "Correct!" : "Incorrect. Please try again.",
       };
@@ -254,10 +273,14 @@ export default defineComponent({
     revealAnswer() {
       this.revealedAnswer = true;
     },
+    handleAlertDismiss() {
+      this.result = null;
+    },
   },
   mounted() {
     this.generateTriangle();
     this.reveal = false;
+    this.result = null;
   },
 });
 </script>
