@@ -13,6 +13,7 @@
               <v-row>
                 <v-col>
                   <v-text-field
+                    label="min side length"
                     width="160"
                     placeholder="min side length"
                     hide-details
@@ -23,6 +24,7 @@
               <v-row>
                 <v-col>
                   <v-text-field
+                    label="max side length"
                     width="160"
                     placeholder="max side length"
                     hide-details
@@ -122,7 +124,7 @@
               <v-text-field
                 v-if="this.reveal"
                 disabled
-                label="Binary Value"
+                label="Enter Hypotenuse"
                 type="input"
               ></v-text-field>
             </v-col>
@@ -160,7 +162,7 @@
 
           <v-row>
             <v-col class="ml-6">
-              <h2 class="text-center" v-if="revealedAnswer">
+              <h2 class="text-center" v-if="reveal">
                 The Correct Answer is:
                 <strong>{{ this.sideC.toFixed(2) }}</strong>
               </h2>
@@ -190,13 +192,12 @@ export default defineComponent({
       maxSideLength: 100,
       userInput: "",
       result: null as { correct: boolean; message: string } | null,
-      revealedAnswer: false,
+      reveal: false,
       MIN_SIDE_LENGTH_PROPORTIONAL: 1, // Minimum side length used for svg proportions
       MAX_SIDE_LENGTH_PROPORTIONAL: 10, // Maximum side length used for svg proportions
       SCALE_FACTOR: 10, // control scaling
       svgWidth: 600,
       svgHeight: 500,
-      reveal: false,
     };
   },
   computed: {
@@ -252,9 +253,9 @@ export default defineComponent({
           parseFloat(this.sideB.toFixed(2)) ** 2,
       );
 
-      this.result = { correct: false, message: "" };
+      this.result = null;
       this.userInput = "";
-      this.revealedAnswer = false;
+      this.reveal = false;
     },
 
     checkAnswer() {
@@ -271,7 +272,7 @@ export default defineComponent({
       }
     },
     revealAnswer() {
-      this.revealedAnswer = true;
+      this.reveal = true;
     },
     handleAlertDismiss() {
       this.result = null;
