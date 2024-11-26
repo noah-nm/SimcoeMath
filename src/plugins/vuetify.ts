@@ -24,6 +24,14 @@ export default createVuetify({
   },
   theme: {
     defaultTheme: "dark",
+    themes: {
+      dark: {
+        colors: {
+          primary: "#990000",
+          success: "#cccccc",
+        },
+      },
+    },
   },
   components,
   directives,

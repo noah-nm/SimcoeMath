@@ -44,7 +44,7 @@
             <v-col>
               <h3 class="text-center">
                 Hexadecimal Number:
-                <strong class="text-blue">{{ hexNumber }}</strong>
+                <strong class="text-primary">{{ hexNumber }}</strong>
               </h3>
             </v-col>
           </v-row>

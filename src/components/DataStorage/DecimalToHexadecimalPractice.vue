@@ -44,7 +44,7 @@
             <v-col>
               <h3 class="text-center">
                 Decimal Number:
-                <strong class="text-blue">{{ decimalNumber }}</strong>
+                <strong class="text-primary">{{ decimalNumber }}</strong>
               </h3>
             </v-col>
           </v-row>

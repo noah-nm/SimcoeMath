@@ -9,23 +9,33 @@
         <v-item-group>
           <template v-for="route in routeCategory.routes" :key="route.name">
             <v-list-item>
-              <sidebarIcon :icon="route.icon" />
-              <sidebarItem :name="route.route.name" :href="route.route.path" />
+              <sidebarIcon color="success" :icon="route.icon" />
+              <sidebarItem
+                color="success"
+                :name="route.route.name"
+                :href="route.route.path"
+              />
             </v-list-item>
           </template>
         </v-item-group>
       </template>
     </v-navigation-drawer>
 
-    <v-app-bar>
+    <v-app-bar elevation="10">
       <v-app-bar-nav-icon @click="goBack">
         <v-icon>mdi-arrow-left-bold</v-icon>
       </v-app-bar-nav-icon>
       <v-app-bar-nav-icon @click="drawer = !drawer">
         <v-icon>mdi-menu</v-icon>
       </v-app-bar-nav-icon>
-
-      <v-toolbar-title>Simcoe Math</v-toolbar-title>
+      <div>
+        <v-img
+          height="27"
+          class="headerLogo"
+          src="../assets/SimcoeMathLogoHeader.png
+          "
+        ></v-img>
+      </div>
     </v-app-bar>
 
     <v-main>
@@ -84,3 +94,10 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.headerLogo {
+  padding-right: 160px;
+  padding-left: 25px;
+}
+</style>
