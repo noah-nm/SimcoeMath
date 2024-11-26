@@ -106,7 +106,7 @@
                   :y1="scaledB / 2"
                   :x2="scaledA / 2 - 15"
                   :y2="-(scaledB / 2)"
-                  stroke="blue"
+                  stroke="#800020"
                   stroke-width="2"
                 />
               </svg>
@@ -133,8 +133,8 @@
           <v-row justify="center">
             <v-col class="d-flex" cols="auto">
               <v-btn
-                class="mr-6 pr-6 pl-6"
                 color="primary"
+                class="mr-6 pr-6 pl-6"
                 @click="this.generateTriangle()"
                 >New Triangle</v-btn
               >

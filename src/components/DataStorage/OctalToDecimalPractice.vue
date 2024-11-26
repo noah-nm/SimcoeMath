@@ -42,7 +42,7 @@
             <v-col>
               <h3 class="text-center">
                 Octal Number:
-                <strong class="text-blue">{{ octalNumber }}</strong>
+                <strong class="text-primary">{{ octalNumber }}</strong>
               </h3>
             </v-col>
           </v-row>

@@ -53,9 +53,9 @@
           <v-row class="mt-8">
             <v-col>
               <h3 class="text-center">
-                <strong class="text-blue">{{ binaryNumber1 }}</strong>
+                <strong class="text-primary">{{ binaryNumber1 }}</strong>
                 ×
-                <strong class="text-blue">{{ binaryNumber2 }}</strong>
+                <strong class="text-primary">{{ binaryNumber2 }}</strong>
                 = ?
               </h3>
             </v-col>

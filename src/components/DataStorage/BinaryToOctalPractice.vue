@@ -42,7 +42,7 @@
             <v-col>
               <h3 class="text-center">
                 Binary Number:
-                <strong class="text-blue">{{ binaryNumber }}</strong>
+                <strong class="text-primary">{{ binaryNumber }}</strong>
               </h3>
             </v-col>
           </v-row>
