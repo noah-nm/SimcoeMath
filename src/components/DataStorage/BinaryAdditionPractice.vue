@@ -99,7 +99,7 @@
             <v-col>
               <v-alert
                 v-if="result !== null"
-                :type="result.correct ? 'success' : 'error'"
+                :type="result.correct ? 'green' : 'error'"
                 closable
                 @click:close="handleAlertDismiss"
               >

@@ -5,7 +5,7 @@
         <v-expansion-panels>
           <v-expansion-panel
             title="Settings"
-            text="Modify game settings"
+            text="Modify game settings (ranges do not apply to hypotenuse)"
             expand-icon="mdi-cog"
             collapse-icon="mdi-cog"
           >
@@ -48,7 +48,7 @@
 
       <v-col class="game" cols="12" md="6">
         <div class="centered-content">
-          <h1 class="text-center">Find the Hypotenuse of the Triangle</h1>
+          <h1 class="text-center">Find side A of the Triangle</h1>
           <h3 class="test-center font-italic">
             Round to the nearest hundredth
           </h3>
@@ -71,15 +71,6 @@
                   stroke="white"
                   stroke-width="2"
                 />
-                <text
-                  :x="0 - 10"
-                  :y="scaledB / 2 + 30"
-                  fill="white"
-                  text-anchor="middle"
-                  font-size="12"
-                >
-                  a = {{ this.sideA.toFixed(2) }}
-                </text>
 
                 <!-- Vertical line -->
                 <line
@@ -109,6 +100,15 @@
                   stroke="#800020"
                   stroke-width="2"
                 />
+                <text
+                  :x="(scaledA / 2 - 15 + (-scaledA / 2 - 15)) / 2 - 30"
+                  :y="(scaledB / 2 + -(scaledB / 2)) / 2 - 10"
+                  fill="#800020"
+                  text-anchor="middle"
+                  font-size="12"
+                >
+                  c = {{ this.sideC.toFixed(2) }}
+                </text>
               </svg>
             </v-col>
           </v-row>
@@ -118,13 +118,13 @@
               <v-text-field
                 v-if="!this.reveal"
                 v-model="userInput"
-                label="Enter Hypotenuse"
+                label="Enter Side A"
                 type="input"
               ></v-text-field>
               <v-text-field
                 v-if="this.reveal"
                 disabled
-                label="Enter Hypotenuse"
+                label="Enter Side A"
                 type="input"
               ></v-text-field>
             </v-col>
@@ -151,7 +151,7 @@
             <v-col>
               <v-alert
                 v-if="this.result != null"
-                :type="this.result.correct ? 'success' : 'error'"
+                :type="this.result.correct ? 'green' : 'error'"
                 closable
                 @click:close="this.handleAlertDismiss()"
               >
@@ -164,7 +164,7 @@
             <v-col class="ml-6">
               <h2 class="text-center" v-if="reveal">
                 The Correct Answer is:
-                <strong>{{ this.sideC.toFixed(2) }}</strong>
+                <strong>{{ this.sideA.toFixed(2) }}</strong>
               </h2>
             </v-col>
           </v-row>
@@ -234,22 +234,17 @@ export default defineComponent({
       this.sideC = this.sideCProportional * scale + this.minSideLength;
 
       // scales sides down if generated too large
-      if (
-        this.sideA > this.maxSideLength ||
-        this.sideB > this.maxSideLength ||
-        this.sideC > this.maxSideLength
-      ) {
+      if (this.sideA > this.maxSideLength || this.sideB > this.maxSideLength) {
         const finalScalingFactor = this.maxSideLength / this.sideC;
         this.sideA *= finalScalingFactor;
         this.sideB *= finalScalingFactor;
-        this.sideC *= finalScalingFactor;
       }
 
-      // final side c calculation for accuracy
+      // final side a calculation for accuracy
       // this ensures that the answer is calculated the same
       // way a user would calculate this answer
-      this.sideC = Math.sqrt(
-        parseFloat(this.sideA.toFixed(2)) ** 2 +
+      this.sideA = Math.sqrt(
+        parseFloat(this.sideC.toFixed(2)) ** 2 -
           parseFloat(this.sideB.toFixed(2)) ** 2,
       );
 
@@ -260,7 +255,7 @@ export default defineComponent({
 
     checkAnswer() {
       const isCorrect =
-        parseFloat(this.userInput) === parseFloat(this.sideC.toFixed(2));
+        parseFloat(this.userInput) === parseFloat(this.sideA.toFixed(2));
       this.result = {
         correct: isCorrect,
         message: isCorrect ? "Correct!" : "Incorrect. Please try again.",
