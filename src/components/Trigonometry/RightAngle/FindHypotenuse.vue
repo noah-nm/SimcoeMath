@@ -151,7 +151,7 @@
             <v-col>
               <v-alert
                 v-if="this.result != null"
-                :type="this.result.correct ? 'success' : 'error'"
+                :type="this.result.correct ? 'green' : 'error'"
                 closable
                 @click:close="this.handleAlertDismiss()"
               >
