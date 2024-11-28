@@ -22,6 +22,7 @@ import BinaryToHex from "../pages/DataStorage/BinaryToHex.vue";
 import HexToBinary from "../pages/DataStorage/HexToBinary.vue";
 import TrigonometryMenu from "../components/Trigonometry/TrigonometryMenu.vue";
 import FindHypotenuse from "../components/Trigonometry/RightAngle/FindHypotenuse.vue";
+import FindSideA from "../pages/Trigonometry/RightAngle/FindSideA.vue";
 
 const routes: RouteRecordRaw[] = [
   {
@@ -103,6 +104,11 @@ const routes: RouteRecordRaw[] = [
     path: "/find-hypotenuse",
     name: "Find Hypotenuse",
     component: FindHypotenuse,
+  },
+  {
+    path: "/find-side-a",
+    name: "Find Side A",
+    component: FindSideA,
   },
 ];
 
